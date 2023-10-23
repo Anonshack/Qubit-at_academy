@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For Admin</title>
+</head>
+<body>
+{% for i in data %}
+    <a href="{% url 'user-detail' pk=i.id %}" style="font-size: 20px;">{{ forloop.counter }}. {{ i.first_name }}</a><br><br>
+{% endfor %}
+    <a href="{% url 'home' %}" style="font-size: 20px;">Home</a>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile Form</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 370px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: green;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Qubit IT academy</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.first_name.label_tag }}
+                {{ form.first_name }}
+            </div>
+            <div class="form-group">
+                {{ form.last_name.label_tag }}
+                {{ form.last_name }}
+            </div>
+            <div class="form-group">
+                {{ form.age.label_tag }}
+                {{ form.age }}
+            </div>
+            <div class="form-group">
+                {{ form.phone_number.label_tag }}
+                {{ form.phone_number }}
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    {% if user.is_superuser %}
+        <h2><a href="{% url 'users-list' %}">Users</a></h2>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Detail</title>
+</head>
+<body>
+  <div class="person-card">
+    <h2 class="name" style="color: blue;">First Name: {{ object.first_name }}</h2>
+    <h2 class="age" style="color: green;">Last name: {{ object.last_name }}</h2>
+    <h2 class="birthday" style="color: red;">Age: {{ object.age }}</h2>
+    <h2 class="ish_joyi">Phone Number: {{ object.phone_number }}</h2>
+  </div>
+    <a href="{% url 'home' %}" style="font-size: 20px;">Home</a>
+</body>
+</html>
